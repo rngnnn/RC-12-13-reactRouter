@@ -8,27 +8,26 @@ import CourseCard from "./pages/CourseCard";
 import ContactForm from "./pages/ContactForm";
 import Paths from "./pages/Paths";
 import TeacherDetails from "./pages/TeacherDetails";
+import NotFound from "./pages/NotFound";
 function App() {
   return (
     <div>
       <Router>
-<MyNavbar/>
+        <MyNavbar />
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
+          {/* "/" (ana yol) tüm yollara dahil edilmiştir, bu nedenle onu "/" ile
+          başlayan diğer yollardan ayırt etmek için exact anahtar kelimesine
+          sahip olması gerekir . */}
           <Route path="/teacher" element={<Teacher />} />
           <Route path="/teacher/:id" element={<TeacherDetails />} />
-
-{/* Route larda değişken tanımlayacaksak önüne süslü yerine : koyarız */}
+          {/* Route larda değişken tanımlayacaksak önüne süslü yerine : koyarız */}
           <Route path="/courses" element={<CourseCard />} />
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/paths" element={<Paths />} />
-          
-
-
+          <Route path="*" element={<NotFound />} />
         </Routes>
-
-
       </Router>
     </div>
   );

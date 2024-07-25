@@ -35,10 +35,8 @@ const MyNavbar = () => {
               Courses
             </NavLink>
             <NavLink
-              style={({ isActive }) => ({
-                border: isActive && "1px solid blue",
-              })}
-            
+              style={({ isActive }) => ({ border: isActive && "1px solid blue" })}
+              className="nav-link"
               to="/contact"
             >
               Contact
